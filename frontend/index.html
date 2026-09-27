@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101117">
+  <meta name="description" content="Le portail Nexa et son serveur Minecraft Poké'Nexa."><title>Nexa Launcher — Poké'Nexa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+</head><body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#accueil" data-page="Accueil" aria-label="Nexa Launcher, accueil"><img class="secret-logo" src="/assets/logo.png" alt="Nexa Launcher" title="Nexa Launcher"></a>
+    <nav class="navigation" aria-label="Navigation principale">
+      <button class="nav-item active" data-page="Accueil"><span class="nav-icon">⌂</span>Accueil</button>
+      <button class="nav-item" data-page="Serveurs"><span class="nav-icon">◇</span>Serveurs</button>
+      <button class="nav-item" data-page="Actualités"><span class="nav-icon">◷</span>Actualités</button>
+      <button class="nav-item" data-page="Chat"><span class="nav-icon">✉</span>Chat</button>
+    </nav>
+    <aside class="community-card"><strong>La communauté Nexa</strong><p>Une aventure, des rencontres et des mondes à découvrir.</p></aside>
+  </aside>
+  <main class="main-area">
+    <header class="mobile-heading"><img class="secret-logo" src="/assets/logo.png" alt="Nexa Launcher"><span>Portail joueur</span></header>
+    <div class="page-meta"><div class="breadcrumb">Nexa Launcher <span>/</span> <strong id="breadcrumb">Accueil</strong></div></div>
+    <section id="homeView" class="page-view">
+      <article class="welcome-panel"><div class="welcome-copy"><div class="eyebrow"><span>✦</span> Actualités de la communauté <span class="pill">CETTE SEMAINE</span></div><h1>Actus de la semaine</h1><p>Poké'Nexa prend forme. Les informations sur le serveur et son ouverture seront annoncées ici.</p><button class="primary-button" data-go="Serveurs">Voir Poké'Nexa <span>↗</span></button></div><div class="welcome-mark"><img src="/assets/pokenexa-logo.png" alt=""></div></article>
+      <p class="signature">Nexa Launcher par Kenzo</p>
+    </section>
+    <section id="serversView" class="page-view" hidden><div class="section-intro"><div class="eyebrow">LE MONDE NEXA</div><h1>Serveurs</h1><p>Retrouve ici les informations pour rejoindre notre univers.</p></div><div id="server-list" class="server-list" aria-live="polite"><div class="empty-state">Chargement de Poké'Nexa…</div></div></section>
+    <section id="newsView" class="page-view" hidden><div class="section-intro"><div class="eyebrow">RESTE INFORMÉ</div><h1>Actualités</h1><p>Les nouvelles de la communauté Nexa seront publiées ici.</p></div><article class="news-card"><div class="news-card-top"><span class="news-category">COMMUNAUTÉ</span><span class="news-date">Cette semaine</span></div><h2>Poké'Nexa prend forme</h2><p>Les informations sur le serveur et son ouverture seront annoncées ici. Reviens bientôt pour découvrir les nouveautés.</p><button class="text-link" data-go="Serveurs">Découvrir le serveur <span>↗</span></button></article></section>
+    <section id="chatView" class="page-view" hidden><div class="section-intro"><div class="eyebrow">SALON COMMUNAUTAIRE</div><h1>Chat Nexa</h1><p>Échange en direct avec les joueurs de la communauté.</p></div><div class="chat-card"><div class="chat-toolbar"><span class="chat-live"><i></i>Discussion en direct</span><span id="chatNickname" class="chat-nickname">Le pseudo sera demandé au premier message</span></div><div id="chatMessages" class="chat-messages" aria-live="polite"><p class="chat-hint">Chargement du chat…</p></div><div id="imagePreview" class="image-preview" hidden><img id="imagePreviewThumb" alt="Aperçu de l’image à envoyer"><span id="imagePreviewName"></span><button id="removeImage" type="button" aria-label="Retirer l’image">×</button></div><form id="chatForm" class="chat-form"><label class="attach-button" for="chatImage" title="Joindre une image" aria-label="Joindre une image">＋</label><input id="chatImage" class="file-input" type="file" accept="image/jpeg,image/png,image/webp"><label class="sr-only" for="chatInput">Ton message</label><input id="chatInput" maxlength="500" placeholder="Écris un message…" autocomplete="off"><button class="primary-button" type="submit">Envoyer <span>➤</span></button></form><p class="chat-footnote">Images JPG, PNG ou WebP · 500 caractères maximum</p></div></section>
+  </main>
+</div>
+<div id="nameDialog" class="dialog-backdrop" hidden><form id="nameForm" class="name-dialog" role="dialog" aria-modal="true" aria-labelledby="nameTitle"><span class="eyebrow">BIENVENUE DANS LE SALON</span><h2 id="nameTitle">Choisis ton pseudo</h2><p>Il sera mémorisé sur ce navigateur pour tes prochaines visites.</p><label class="sr-only" for="nameInput">Pseudo</label><input id="nameInput" minlength="3" maxlength="24" required autocomplete="nickname" placeholder="Ton pseudo (3 à 24 caractères)"><div id="nameError" class="form-error" role="alert"></div><div class="dialog-actions"><button id="cancelName" class="secondary-button" type="button">Annuler</button><button class="primary-button" type="submit">Continuer <span>➤</span></button></div></form></div>
+<div id="imageLightbox" class="image-lightbox" hidden><button id="closeLightbox" type="button" aria-label="Fermer">×</button><img id="lightboxImage" alt="Image partagée dans le chat"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="easterEgg" class="easter-egg" hidden><section class="easter-dialog" role="dialog" aria-modal="true" aria-labelledby="easterTitle"><button class="easter-close" type="button" aria-label="Fermer">×</button><span class="easter-label">SECRET DÉBLOQUÉ</span><h2 id="easterTitle">Tu as trouvé l’easter egg !</h2><img src="/assets/easter-egg.jpg" alt="Photo surprise de Kenzo"></section></div>
+<script type="module" src="/app.js"></script>
+</body></html>
